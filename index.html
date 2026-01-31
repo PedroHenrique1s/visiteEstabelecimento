@@ -6,142 +6,14 @@
     <title>Portal do Parceiro | VisiteOlímpia</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
-    <style>
-        :root {
-            --primary: #FF6B00;
-            --secondary: #004E89;
-            --bg: #f0f2f5;
-            --white: #ffffff;
-            --text: #333;
-            --success: #28a745;
-            --danger: #dc3545;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); display: flex; height: 100vh; overflow: hidden; }
-
-        /* --- SIDEBAR (Navegação) --- */
-        .sidebar {
-            width: 250px;
-            background: var(--secondary);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            transition: 0.3s;
-        }
-        .logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 40px; }
-        .logo span { color: var(--primary); }
-        
-        .menu-item {
-            display: flex; align-items: center; gap: 10px;
-            padding: 15px;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 5px;
-            transition: 0.2s;
-            cursor: pointer;
-        }
-        .menu-item:hover, .menu-item.active { background: rgba(255,255,255,0.1); color: white; }
-        .menu-item i { font-size: 1.2rem; }
-
-        /* --- CONTEÚDO PRINCIPAL --- */
-        .main-content { flex: 1; padding: 30px; overflow-y: auto; }
-        
-        .header-admin {
-            display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;
-        }
-        .user-profile { display: flex; align-items: center; gap: 10px; font-weight: 600; }
-        .avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; }
-
-        /* --- WIDGET DE STATUS (O Pulo do Gato) --- */
-        .status-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            text-align: center;
-            margin-bottom: 30px;
-            border-left: 10px solid var(--danger); /* Padrão Fechado */
-            transition: 0.3s;
-        }
-        .status-card.open { border-left-color: var(--success); }
-
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 80px;
-            height: 40px;
-            margin: 20px 0;
-        }
-        .toggle-switch input { opacity: 0; width: 0; height: 0; }
-        .slider {
-            position: absolute; cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 40px;
-        }
-        .slider:before {
-            position: absolute; content: "";
-            height: 32px; width: 32px;
-            left: 4px; bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        input:checked + .slider { background-color: var(--success); }
-        input:checked + .slider:before { transform: translateX(40px); }
-
-        .status-text { font-size: 1.2rem; font-weight: 700; color: #666; }
-        .open .status-text { color: var(--success); }
-
-        /* --- FORMULÁRIO RÁPIDO --- */
-        .form-grid {
-            display: grid; grid-template-columns: 2fr 1fr; gap: 30px;
-        }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        
-        h3 { margin-bottom: 20px; color: var(--secondary); font-size: 1.1rem; }
-
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: 500; font-size: 0.9rem; }
-        input, select, textarea {
-            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Poppins', sans-serif;
-        }
-        .btn-submit {
-            background: var(--primary); color: white; border: none; padding: 12px 30px;
-            border-radius: 8px; cursor: pointer; font-weight: 600; width: 100%; font-size: 1rem;
-            transition: 0.3s;
-        }
-        .btn-submit:hover { background: #e55e00; }
-
-        /* LISTA RECENTE */
-        .event-item {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 0; border-bottom: 1px solid #eee;
-        }
-        .event-info h4 { font-size: 0.95rem; margin-bottom: 3px; }
-        .event-info span { font-size: 0.8rem; background: #eee; padding: 2px 8px; border-radius: 4px; }
-
-        /* RESPONSIVIDADE MOBILE */
-        @media (max-width: 768px) {
-            body { flex-direction: column; overflow-y: scroll; height: auto; }
-            .sidebar { width: 100%; flex-direction: row; justify-content: space-between; align-items: center; padding: 15px; }
-            .sidebar .menu-text { display: none; } /* Esconde texto no menu mobile */
-            .logo { margin-bottom: 0; font-size: 1.2rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .status-card h2 { font-size: 1.2rem; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <aside class="sidebar">
-        <div class="logo">Parceiro <span>VO</span></div>
-        <nav style="display: flex; flex-direction: column; gap: 5px; width: 100%;"> <a href="#" class="menu-item active">
+        <div class="logo">Parceiro <span>Olímpia</span></div>
+        <nav>
+            <a href="#" class="menu-item active">
                 <i class="ph ph-house"></i>
                 <span class="menu-text">Início</span>
             </a>
@@ -158,7 +30,7 @@
 
     <main class="main-content">
         <div class="header-admin">
-            <h2>Bem-vindo, DreamLand Museu de Cera Olímpia</h2>
+            <h2>Bem-vindo, DreamLand</h2>
             <div class="user-profile">
                 <span>DreamLand Museu de Cera Olímpia</span>
                 <div class="avatar"></div>
@@ -167,7 +39,7 @@
 
         <div class="status-card" id="statusCard">
             <h2>Status em Tempo Real</h2>
-            <p style="color: #888; margin-bottom: 15px; font-size: 0.9rem;">
+            <p class="status-desc">
                 Isso controla se você aparece como "Aberto Agora" no aplicativo.
             </p>
             
@@ -185,10 +57,10 @@
                 <form id="formEvento">
                     <div class="form-group">
                         <label>Título do Evento</label>
-                        <input type="text" placeholder="Ex: Sextaneja com Dupla X" required>
+                        <input type="text" placeholder="Ex: Ingresso 50% OFF para Crianças" required>
                     </div>
                     
-                    <div class="form-grid" style="grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="row-inputs">
                         <div class="form-group">
                             <label>Data</label>
                             <input type="date" required>
@@ -217,17 +89,17 @@
                 <div class="event-list">
                     <div class="event-item">
                         <div class="event-info">
-                            <h4>Pagode no Domingo</h4>
-                            <span>12/08 - 16:00</span>
+                            <h4>Chegada do Papai Noel</h4>
+                            <span>25/12 - 18:00</span>
                         </div>
-                        <i class="ph ph-trash" style="color: var(--danger); cursor: pointer;"></i>
+                        <i class="ph ph-trash delete-icon"></i>
                     </div>
                     <div class="event-item">
                         <div class="event-info">
-                            <h4>Happy Hour 50% OFF</h4>
-                            <span>Hoje - 18:00</span>
+                            <h4>Férias Escolares</h4>
+                            <span>Janeiro - 09:00</span>
                         </div>
-                        <i class="ph ph-trash" style="color: var(--danger); cursor: pointer;"></i>
+                        <i class="ph ph-trash delete-icon"></i>
                     </div>
                 </div>
             </div>
@@ -235,37 +107,30 @@
     </main>
 
     <script>
-        // LÓGICA DO PAINEL (SIMULAÇÃO)
-
         const toggle = document.getElementById('toggleStatus');
         const statusText = document.getElementById('statusText');
         const card = document.getElementById('statusCard');
 
-        // 1. Simula a mudança de status (Aberto/Fechado)
+        // Toggle Status
         toggle.addEventListener('change', function() {
             if(this.checked) {
                 statusText.innerHTML = "ABERTO AGORA 🟢";
                 card.classList.add('open');
-                // AQUI ENTRARIA SUA CHAMADA SUPABASE:
-                // supabase.from('estabelecimentos').update({ is_open: true }).eq('id', user_id)
             } else {
                 statusText.innerHTML = "FECHADO 🔴";
                 card.classList.remove('open');
-                // supabase.from('estabelecimentos').update({ is_open: false }).eq('id', user_id)
             }
         });
 
-        // 2. Simula envio de formulário
+        // Form Submit Simulado
         document.getElementById('formEvento').addEventListener('submit', function(e) {
             e.preventDefault();
             const btn = this.querySelector('.btn-submit');
             const originalText = btn.innerText;
-
             btn.innerText = "Publicando...";
             btn.style.opacity = "0.7";
-
             setTimeout(() => {
-                alert("Evento publicado com sucesso! Ele já aparece no aplicativo.");
+                alert("Evento publicado!");
                 btn.innerText = originalText;
                 btn.style.opacity = "1";
                 this.reset();
